@@ -30,8 +30,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: "os fingerprinting"
       run: hostnamectl status  
-    - name: "build app"
-      run: chmod u+x ./build.sh && ./build.sh 
+    - name: "build app1"
+      run: cd app1 && chmod u+x ./build.sh && ./build.sh 
 
   # ubuntu-1804-job:
   #   name: "ubuntu-18.04"
