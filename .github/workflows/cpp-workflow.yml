@@ -18,6 +18,8 @@ jobs:
     #   run: ./configure
     - name: make
       run: cd app2 && make
+    - name: make
+      run: cd app3 && make      
     # - name: make check
     #   run: make check
     # - name: make distcheck
@@ -33,19 +35,23 @@ jobs:
     - name: "build app1"
       run: cd app1 && chmod u+x ./build.sh && ./build.sh 
 
-  # ubuntu-1804-job:
-  #   name: "ubuntu-18.04"
-  #   runs-on: ubuntu-18.04
-  #   steps:
-  #   - uses: actions/checkout@v2
-  #   - name: "os fingerprinting"
-  #     run: hostnamectl status  
+  ubuntu-1804-job:
+    name: "ubuntu-18.04"
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: "os fingerprinting"
+      run: hostnamectl status  
+    - name: "build app1"
+      run: cd app1 && chmod u+x ./build.sh && ./build.sh       
 
-  # ubuntu-2004-job:
-  #   name: "ubuntu-20.04"
-  #   runs-on: ubuntu-20.04
-  #   steps:
-  #   - uses: actions/checkout@v2
-  #   - name: "os fingerprinting"
-  #     run: hostnamectl status 
+  ubuntu-2004-job:
+    name: "ubuntu-20.04"
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: "os fingerprinting"
+      run: hostnamectl status 
+    - name: "build app1"
+      run: cd app1 && chmod u+x ./build.sh && ./build.sh       
 
